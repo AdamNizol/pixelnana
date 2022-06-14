@@ -1,6 +1,9 @@
-# pixelnana
+# PixelNana
+### [Live Demo](https://adamnizol.github.io/pixelnana/)
 
-## Project setup
+Draw pictures using your Banano!
+
+## Project Setup
 ```
 npm install
 ```
@@ -13,7 +16,4 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+``` 
