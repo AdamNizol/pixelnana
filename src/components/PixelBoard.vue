@@ -93,19 +93,21 @@ export default {
           console.log(action)
           if(action != undefined){
             let ind = action.pos[1]*this.width + action.pos[0]
-            // console.log(ind)
-            let currentCell = this.cells[ind]
-            // console.log(currentCell)
-            let col = currentCell.color.substr(4,currentCell.color.length-5).split(',')
-            let newCol = action.color.substr(4,action.color.length-5).split(',')
+            if(ind < this.cells.length){
+              // console.log(ind)
+              let currentCell = this.cells[ind]
+              // console.log(currentCell)
+              let col = currentCell.color.substr(4,currentCell.color.length-5).split(',')
+              let newCol = action.color.substr(4,action.color.length-5).split(',')
 
-            let combined = [
-              Math.round(((parseInt(col[0])*parseFloat(currentCell.strength))+(parseInt(newCol[0])*parseFloat(trans.amount_decimal)))/(parseFloat(currentCell.strength)+parseFloat(trans.amount_decimal))),
-              Math.round(((parseInt(col[1])*parseFloat(currentCell.strength))+(parseInt(newCol[1])*parseFloat(trans.amount_decimal)))/(parseFloat(currentCell.strength)+parseFloat(trans.amount_decimal))),
-              Math.round(((parseInt(col[2])*parseFloat(currentCell.strength))+(parseInt(newCol[2])*parseFloat(trans.amount_decimal)))/(parseFloat(currentCell.strength)+parseFloat(trans.amount_decimal)))
-            ]
-            // console.log(combined)
-            this.cells.splice(ind,1,{color: "rgb("+combined[0]+','+combined[1]+','+combined[2]+")",strength:(parseFloat(currentCell.strength)+parseFloat(trans.amount_decimal))})
+              let combined = [
+                Math.round(((parseInt(col[0])*parseFloat(currentCell.strength))+(parseInt(newCol[0])*parseFloat(trans.amount_decimal)))/(parseFloat(currentCell.strength)+parseFloat(trans.amount_decimal))),
+                Math.round(((parseInt(col[1])*parseFloat(currentCell.strength))+(parseInt(newCol[1])*parseFloat(trans.amount_decimal)))/(parseFloat(currentCell.strength)+parseFloat(trans.amount_decimal))),
+                Math.round(((parseInt(col[2])*parseFloat(currentCell.strength))+(parseInt(newCol[2])*parseFloat(trans.amount_decimal)))/(parseFloat(currentCell.strength)+parseFloat(trans.amount_decimal)))
+              ]
+              // console.log(combined)
+              this.cells.splice(ind,1,{color: "rgb("+combined[0]+','+combined[1]+','+combined[2]+")",strength:(parseFloat(currentCell.strength)+parseFloat(trans.amount_decimal))})
+            }
           }
         }
       }
