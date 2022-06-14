@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PixelBoard msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PixelBoard from './components/PixelBoard.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PixelBoard
   }
 }
 </script>
@@ -22,7 +21,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  padding-top: 5px;
+  background-color: rgb(100,100,110);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
 }
 </style>
