@@ -1,13 +1,13 @@
 <template>
   <div class="hello">
     <div class="upperContainer">
-      <div>
+      <div style="display: flex; flex-direction:column; align-item: flex-end;">
         <div>
           <span>Color:</span>
           <input type="color" v-model="inputColor" />
 
           <span style="margin-left: 8px;">Strength:</span>
-          <input type="number" v-model="inputStrength" style="width:6em" min="0.000001" step="0.0001"/>
+          <input type="number" v-model="inputStrength" style="width:5em" min="0.01" step="0.01"/>
         </div>
         <div>
           <span>send </span> <input type="text" :value="sendAmount" style="width:11em" readonly/> <span> to </span> <input type="text" :value="banAddr" style="width:7em" readonly/>
@@ -51,7 +51,7 @@ export default {
       width: width,
       height: height,
       inputColor: "#0000ff",
-      inputStrength: 0.0001,
+      inputStrength: 0.01,
       interval: undefined,
       selected: -1,
       height: 0
